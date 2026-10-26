@@ -75,8 +75,13 @@ function RegisterScreen() {
       toast.error(error.message);
       return;
     }
-    if (data.session) navigate({ to: "/dashboard", replace: true });
-    else toast.success("Account created. Check your email to confirm it, then sign in.");
+    // New accounts return to sign-in even when Supabase provides a session.
+    // Email confirmation remains controlled by the Supabase project settings.
+    if (data.session) {
+      await getSupabase().auth.signOut();
+    }
+    toast.success("Account created successfully! Sign in to continue.", { duration: 5000 });
+    navigate({ to: "/login", replace: true });
   };
 
   return (

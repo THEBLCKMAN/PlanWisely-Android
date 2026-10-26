@@ -20,20 +20,20 @@ function SplashScreen() {
   }, [navigate]);
 
   return (
-    <div className="gradient-brand relative flex min-h-dvh flex-col items-center justify-center overflow-hidden">
+    <div className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden bg-black">
       <motion.div
         initial={{ opacity: 0, scale: 0.6, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
       >
-        <Logo className="h-40" light />
+        <Logo className="h-40" />
       </motion.div>
 
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7, duration: 0.6 }}
-        className="mt-6 text-sm font-semibold tracking-[0.3em] uppercase text-white/85"
+        className="mt-6 text-sm font-semibold tracking-[0.3em] uppercase text-white"
       >
         Plan your future, plan wisely
       </motion.p>
@@ -54,8 +54,6 @@ function SplashScreen() {
         ))}
       </motion.div>
 
-      <span className="absolute -left-16 top-1/4 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
-      <span className="absolute -right-12 bottom-1/4 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
     </div>
   );
 }
