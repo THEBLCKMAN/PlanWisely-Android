@@ -1,0 +1,18 @@
+project_id = "aovstyfbqduhgtzwvzyq"
+
+# New sb_publishable keys are not legacy JWTs. The function verifies the
+# signed-in user via supabase.auth.getUser(token) before calling OpenAI.
+[functions.wisey-chat]
+verify_jwt = false
+
+[functions.challenge-suggest]
+verify_jwt = false
+
+[functions.delete-account]
+verify_jwt = false
+
+[functions.admin-students]
+verify_jwt = false
+
+[functions.agent-runner]
+verify_jwt = false

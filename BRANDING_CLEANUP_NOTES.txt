@@ -1,0 +1,24 @@
+PLANWISELY BRANDING CLEANUP
+===========================
+
+Removed:
+- .lovable/project.json and the .lovable directory (project/editor metadata)
+- AGENTS.md (editor-specific collaboration instructions)
+
+Updated:
+- README.md with PlanWisely-specific instructions and description
+- package.json package name from generic template to planwisely
+
+Preserved intentionally for stability:
+- @lovable.dev/vite-tanstack-config dependency and vite.config.ts
+- Error reporting hooks and src/lib/lovable-error-reporting.ts
+- bun.lock and bunfig.toml
+
+These are internal build/development references, not visible application branding. Removing
+or renaming them without migrating and testing the config can break the development server
+or error reporting. This archive is NOT a complete removal of Lovable-specific tooling.
+
+If the project is still linked to the editor/GitHub, removing metadata locally does not
+unlink the remote project. Existing Git history can also retain provenance.
+
+This ZIP was structurally checked but not built or browser-tested in this environment.
